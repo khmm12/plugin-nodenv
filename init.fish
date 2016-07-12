@@ -5,7 +5,7 @@ if not type -fq nodenv; and set -q NODENV_ROOT; and not contains "$NODENV_ROOT/b
   set PATH $NODENV_ROOT/bin $PATH
 end
 
-if type -q nodenv
+if type -fq nodenv
   if command nodenv init - | grep --quiet "function"
     set -gx __NODENV_SUPPORTS_FISH true
     source (nodenv init - | psub)
